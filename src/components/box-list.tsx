@@ -35,7 +35,6 @@ export default function BoxList({ budgets, allCategories }: { budgets: BudgetIte
                                     </div>
                                     <div className="text-right">
                                         <p className="text-lg font-bold">{rupiah(totalSpent)}</p>
-                                        <p className="text-sm text-gray-300">Total Pengeluaran</p>
                                     </div>
                                 </div>
                             </div>

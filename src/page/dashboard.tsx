@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { socket } from "../lib/socket";
 import { BudgetItem, CategoryItem } from "../types";
 import moment from "moment";
-import BoxList from "../components/budget-list copy";
+import BoxList from "../components/box-list";
 
 export default function Dashboard() {
     const [isConnected, setIsConnected] = useState(socket.connected);

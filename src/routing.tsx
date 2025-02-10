@@ -9,6 +9,7 @@ import { loginSuccess } from "./store/authSlice";
 import { RootState } from "./store";
 import Layout from "./components/layout";
 import Dashboard from "./page/dashboard";
+import RegisterPage from "./page/register";
 
 export default function Routing() {
     const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function Routing() {
     return (
         <Routes>
             <Route index element={accessToken ? <Navigate to="/app" /> : <LoginPage />} />
+            <Route path="register" element={accessToken ? <Navigate to="/app" /> : <RegisterPage />} />
             <Route path="app" element={<PrivateRoute><Layout /></PrivateRoute>}>
                 <Route index element={<Navigate to="/app/dashboard" />} />
                 <Route path="dashboard" element={<Dashboard />} />
