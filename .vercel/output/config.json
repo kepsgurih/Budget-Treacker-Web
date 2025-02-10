@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "^(?:/(.*))$",
+      "headers": {
+        "Cache-Control": "s-maxage=1, stale-while-revalidate"
+      },
+      "continue": true
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "^(?:/(.*))$",
+      "dest": "/index.html",
+      "check": true
+    },
+    {
+      "handle": "error"
+    },
+    {
+      "status": 404,
+      "src": "^(?!/api).*$",
+      "dest": "/404.html"
+    }
+  ],
+  "framework": {
+    "version": "6.1.0"
+  },
+  "crons": []
+}
